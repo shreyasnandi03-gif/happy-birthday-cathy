@@ -370,7 +370,8 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
 #leak.go{animation:leak 1.5s ease-out}
 @keyframes leak{0%{opacity:0;transform:translateX(-30%) scale(1)}35%{opacity:.85}100%{opacity:0;transform:translateX(30%) scale(1.15)}}
 .lb{position:fixed;left:0;right:0;height:11vh;background:#000;z-index:9;transition:transform 1.3s cubic-bezier(.7,0,.2,1)}
-.lb.t{top:0}.lb.b{bottom:0}
+.lb.t{top:0;transform:translateY(-100%)}.lb.b{bottom:0;transform:translateY(100%)}
+#intro.born .lb{transform:none}
 #intro.bloomed .lb.t{transform:translateY(-100%)}
 #intro.bloomed .lb.b{transform:translateY(100%)}
 #curtain .chap{font-family:var(--round);font-weight:800;font-size:.78rem;letter-spacing:.42em;text-transform:uppercase;color:var(--pink-d);overflow:hidden}
