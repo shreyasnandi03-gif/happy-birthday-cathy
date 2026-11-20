@@ -217,7 +217,7 @@ main{position:relative;z-index:1}
 .candle .smoke{position:absolute;left:50%;bottom:56px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:rgba(160,150,140,.5);opacity:0;pointer-events:none}
 .candle.out .smoke{animation:smoke 1.6s ease-out forwards}
 @keyframes smoke{0%{opacity:.8;transform:translateY(0) scale(1)}100%{opacity:0;transform:translate(8px,-60px) scale(3)}}
-.candle .lbl{position:absolute;top:58px;left:50%;transform:translateX(-50%);font-family:var(--round);font-weight:800;font-size:.66rem;color:var(--brown-m);white-space:nowrap;top:-74px;letter-spacing:.04em;pointer-events:none}
+.candle .lbl{position:absolute;top:58px;left:50%;transform:translateX(-50%);font-family:var(--round);font-weight:800;font-size:.66rem;color:var(--brown-m);white-space:nowrap;top:-56px;letter-spacing:.04em;pointer-events:none}
 .wish{margin-top:30px;min-height:3.2em;font-family:var(--round);font-weight:800;font-size:1.15rem;color:var(--brown-d)}
 .wish .big{display:block;font-size:clamp(1.4rem,4.6vw,2rem);color:var(--pink-d)}
 
@@ -717,31 +717,6 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
   </div>
 </section>
 
-<!-- ============ CAKE ============ -->
-<section id="cake">
-  <div class="wrap center">
-    <div class="eyebrow reveal">make a wish</div>
-    <h2 class="sec-title reveal">Blow out the candles</h2>
-    <p class="sec-sub reveal">Three candles — one for each country this love is spread across. Tap the flames to blow them out (blowing on your phone also works emotionally, but not technically).</p>
-    <div class="cake-stage reveal">
-      <span class="bear brown" id="cakeBrown" data-bear="brown"></span>
-      <div class="cake">
-        <div class="candles" id="candles">
-          <button class="candle" aria-label="Blow out the China candle"><span class="glow"></span><span class="flame"></span><span class="smoke"></span><span class="lbl">中国</span></button>
-          <button class="candle" aria-label="Blow out the India candle"><span class="glow"></span><span class="flame"></span><span class="smoke"></span><span class="lbl">भारत</span></button>
-          <button class="candle" aria-label="Blow out the Germany candle"><span class="glow"></span><span class="flame"></span><span class="smoke"></span><span class="lbl">DE</span></button>
-        </div>
-        <div class="layer l2"><div class="icing"></div></div>
-        <div class="layer l1"><div class="icing"></div><div class="dots"></div></div>
-        <div class="plate"></div>
-      </div>
-      <span class="bear white" id="cakeWhite" data-bear="white"></span>
-    </div>
-    <div class="wish" id="wish" aria-live="polite">3 candles left. Close your eyes first. No peeking.</div>
-    <button class="btn ghost" id="relight" hidden>Light them again</button>
-  </div>
-</section>
-
 <!-- ============ COUPONS ============ -->
 <section id="coupons">
   <div class="wrap center">
@@ -791,6 +766,30 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
       <div class="letter-text" id="letterText"></div>
       <div class="sig" id="sig"><span class="bear brown wave" data-bear="brown"></span></div>
     </div>
+  </div>
+</section>
+<!-- ============ CAKE ============ -->
+<section id="cake">
+  <div class="wrap center">
+    <div class="eyebrow reveal">make a wish</div>
+    <h2 class="sec-title reveal">Blow out the candles</h2>
+    <p class="sec-sub reveal">Three candles — one for each country this love is spread across. Tap the flames to blow them out (blowing on your phone also works emotionally, but not technically).</p>
+    <div class="cake-stage reveal">
+      <span class="bear brown" id="cakeBrown" data-bear="brown"></span>
+      <div class="cake">
+        <div class="candles" id="candles">
+          <button class="candle" aria-label="Blow out the China candle"><span class="glow"></span><span class="flame"></span><span class="smoke"></span><span class="lbl">中国</span></button>
+          <button class="candle" aria-label="Blow out the India candle"><span class="glow"></span><span class="flame"></span><span class="smoke"></span><span class="lbl">भारत</span></button>
+          <button class="candle" aria-label="Blow out the Germany candle"><span class="glow"></span><span class="flame"></span><span class="smoke"></span><span class="lbl">DE</span></button>
+        </div>
+        <div class="layer l2"><div class="icing"></div></div>
+        <div class="layer l1"><div class="icing"></div><div class="dots"></div></div>
+        <div class="plate"></div>
+      </div>
+      <span class="bear white" id="cakeWhite" data-bear="white"></span>
+    </div>
+    <div class="wish" id="wish" aria-live="polite">3 candles left. Close your eyes first. No peeking.</div>
+    <button class="btn ghost" id="relight" hidden>Light them again</button>
   </div>
 <footer class="reveal">
   <div class="chase" aria-hidden="true">
@@ -1235,7 +1234,7 @@ candles.forEach(c=>c.addEventListener('click',()=>{
   c.classList.add('out'); pop();
   const left = candles.filter(x=>!x.classList.contains('out')).length;
   if(left){wish.textContent = left===2 ? "2 candles left. Big breath, birthday girl…" : "1 left! Don't stop now 🌬️"; return}
-  wish.innerHTML='<span class="big">Wish made! 🎉</span>Bearshree hopes it was about him. (It was, right?)';
+  wish.innerHTML='<span class="big">Wish made! 🎉</span>Bearshree hopes it was about him. (It was, right?)<br><span style="font-family:var(--hand);font-size:1.3em;color:var(--pink-d)">Happy 19th birthday, Bearthy. 🤍</span>';
   ['cakeBrown','cakeWhite'].forEach(id=>document.getElementById(id).classList.add('dance'));
   const r=document.querySelector('.cake').getBoundingClientRect();
   burst(r.left+r.width/2, r.top, 180, 1.1);
