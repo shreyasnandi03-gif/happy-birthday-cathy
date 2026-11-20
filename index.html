@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Happy Birthday, Cathy</title>
-<meta name="description" content="A little present from your brown bear. Open it — the bears are waiting.">
+<meta name="description" content="A little present from Bearshree to Bearthy. Open it, the bears are waiting.">
 <meta property="og:title" content="A present for Cathy 🎁">
 <meta property="og:description" content="Open it. The bears are waiting. 🐻🤍🐻">
 <meta name="theme-color" content="#FFF7EC">
@@ -323,6 +323,26 @@ body.locked #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
 .trail{position:fixed;pointer-events:none;z-index:44;font-size:14px;animation:trail 1s ease-out forwards}
 @keyframes trail{from{opacity:1;transform:translate(-50%,-50%) scale(1)}to{opacity:0;transform:translate(-50%,-160%) scale(.4) rotate(20deg)}}
 
+/* lanterns */
+.lan{position:absolute;left:50%;top:70%;transform:translate(-50%,-50%);z-index:3;cursor:pointer;border:none;background:none;padding:6px}
+.lan-in{display:block;width:34px;height:44px;position:relative;border-radius:42% 42% 30% 30%/48% 48% 34% 34%;
+  background:radial-gradient(ellipse at 50% 72%,#FFF1C2 0%,#FFC867 35%,#F28A3E 72%,#C9522E 100%);
+  box-shadow:0 0 18px 6px rgba(255,170,80,.55),0 0 54px 16px rgba(255,140,60,.22);animation:lanFlick 1.6s ease-in-out infinite alternate}
+.lan-in::before{content:"";position:absolute;left:22%;right:22%;top:-3px;height:5px;border-radius:3px;background:#8C3A22}
+.lan-in::after{content:"";position:absolute;left:50%;bottom:-4px;width:12px;height:6px;margin-left:-6px;border-radius:0 0 6px 6px;background:#FFE7A8;box-shadow:0 0 10px 3px rgba(255,220,140,.9)}
+.lan-in i{position:absolute;top:8%;bottom:10%;width:1.5px;background:rgba(140,58,34,.35)}
+.lan-in i:first-child{left:32%}.lan-in i:last-child{right:32%}
+.lan.pink .lan-in{background:radial-gradient(ellipse at 50% 72%,#FFF0F3 0%,#FFB8C8 38%,#E97A97 74%,#B44866 100%);box-shadow:0 0 18px 6px rgba(244,150,180,.55),0 0 54px 16px rgba(240,120,160,.22)}
+@keyframes lanFlick{from{filter:brightness(1)}to{filter:brightness(1.18)}}
+.lan.ready .lan-in{animation:lanFlick 1.2s ease-in-out infinite alternate,ready 2.4s ease-in-out infinite}
+@keyframes ready{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.lan.aloft .lan-in{animation:lanFlick 1.6s ease-in-out infinite alternate,bobUp 5s ease-in-out infinite}
+@keyframes bobUp{0%,100%{transform:translate(0,0) rotate(-2deg)}50%{transform:translate(4px,-8px) rotate(2deg)}}
+.lan.read .lan-in{box-shadow:0 0 26px 10px rgba(255,200,120,.8),0 0 70px 22px rgba(255,150,70,.35)}
+#releaseBtn{margin-top:16px}
+#releaseBtn span{opacity:.75;font-size:.85em;margin-left:6px}
+.sky-card.finale .lan .lan-in{animation:lanFlick .6s ease-in-out infinite alternate,bobUp 5s ease-in-out infinite}
+
 /* night sky */
 .sky-card{position:relative;margin:30px auto 0;max-width:760px;height:min(58vh,430px);min-height:330px;border-radius:28px;overflow:hidden;background:radial-gradient(ellipse at 75% 0%,#4A4280 0%,#24204A 50%,#141130 100%);box-shadow:0 24px 60px rgba(30,20,60,.35)}
 .tw{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}
@@ -404,6 +424,9 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
 #nextBtn.nudge .nx-bear{transform:translateY(0);opacity:1}
 @media (max-width:520px){.navlbl{display:none}#nextBtn .nx-t{font-size:.9rem}}
 
+.ntag{position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);font-family:var(--round);font-weight:800;font-size:.8rem;color:var(--brown-m);background:#fff;border:2px solid #F0DCC4;border-radius:999px;padding:2px 12px;white-space:nowrap;box-shadow:0 3px 0 #F0DCC4}
+.bear.white .ntag{color:var(--pink-d);border-color:#F6C7D3;box-shadow:0 3px 0 #F6C7D3}
+.hero-bears{margin-bottom:26px}
 /* ---------- Extra bear moves ---------- */
 .bear.dance .b-all{animation:dance .9s ease-in-out infinite}
 .bear.white.dance .b-all{animation-delay:-.45s}
@@ -576,9 +599,9 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
         <span class="balloon" style="right:8%;top:-20px;background:#A86B3C;border-color:#A86B3C;animation-delay:-.4s"><i></i></span>
         <span class="balloon" style="right:18%;top:10px;background:#F9D3DC;border-color:#F9D3DC;animation-delay:-3s"><i></i></span>
       </div>
-      <span class="bear brown wave" data-bear="brown" data-talk="brown" role="button" tabindex="0" aria-label="Brown bear"><span class="bubble"></span></span>
+      <span class="bear brown wave" data-bear="brown" data-talk="brown" role="button" tabindex="0" aria-label="Bearshree"><span class="bubble"></span><span class="ntag">Bearshree</span></span>
       <span class="mid-heart"><svg viewBox="0 0 24 22" aria-hidden="true"><path d="M12 21s-8.5-5.3-10.6-10.2C-.2 6.9 2.3 2 6.6 2c2.4 0 4.2 1.3 5.4 3.2C13.2 3.3 15 2 17.4 2c4.3 0 6.8 4.9 5.2 8.8C20.5 15.7 12 21 12 21z" fill="currentColor"/></svg></span>
-      <span class="bear white wave" data-bear="white" data-talk="white" role="button" tabindex="0" aria-label="White bear"><span class="bubble"></span></span>
+      <span class="bear white wave" data-bear="white" data-talk="white" role="button" tabindex="0" aria-label="Bearthy"><span class="bubble"></span><span class="ntag">Bearthy</span></span>
     </div>
     <div class="hint">psst… tap the bears, they have things to say</div>
     <div><button class="btn pink start-btn" id="startBtn">Let’s begin, birthday girl →</button></div>
@@ -613,20 +636,20 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
           <circle r="26" fill="#FFF0DA" stroke="#E3A42A" stroke-width="3"/>
           <g transform="translate(-11 -10) scale(.92)"><path d="M12 21s-8.5-5.3-10.6-10.2C-.2 6.9 2.3 2 6.6 2c2.4 0 4.2 1.3 5.4 3.2C13.2 3.3 15 2 17.4 2c4.3 0 6.8 4.9 5.2 8.8C20.5 15.7 12 21 12 21z" fill="#E3A42A"/></g>
           <text text-anchor="middle" y="50" font-family="var(--round)" font-weight="800" font-size="17" fill="#4A2E1C">India</text>
-          <text text-anchor="middle" y="68" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">where the brown bear grew up</text>
+          <text text-anchor="middle" y="68" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">where Bearshree grew up</text>
         </g>
         <g transform="translate(150 98)">
           <circle r="30" fill="#fff" stroke="#A86B3C" stroke-width="3"/>
           <g transform="translate(-24 -25) scale(.24)" id="mapBrown"></g>
           <text text-anchor="middle" y="-40" font-family="var(--round)" font-weight="800" font-size="17" fill="#4A2E1C">Germany</text>
         </g>
-        <text x="150" y="150" text-anchor="middle" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">brown bear, surviving on</text>
+        <text x="150" y="150" text-anchor="middle" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">Bearshree, surviving on</text>
         <text x="150" y="165" text-anchor="middle" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">bread &amp; deadlines</text>
         <g transform="translate(498 150)">
           <circle r="34" fill="#FCE3E9" stroke="#E07A93" stroke-width="3"/>
           <g transform="translate(-27 -28) scale(.27)" id="mapWhite"></g>
           <text text-anchor="middle" y="58" font-family="var(--round)" font-weight="800" font-size="17" fill="#B9566F">China</text>
-          <text text-anchor="middle" y="76" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">where the white bear lives</text>
+          <text text-anchor="middle" y="76" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">where Bearthy lives</text>
           <text text-anchor="middle" y="91" font-family="var(--round)" font-weight="600" font-size="12" fill="#7B6252">(and his whole heart too)</text>
         </g>
       </svg>
@@ -659,7 +682,7 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
         <g id="sceneBrown"></g><g id="sceneWhite"></g>
         <g><rect x="146" y="132" width="24" height="34" rx="4" fill="#C8CDD3" stroke="#4A2E1C" stroke-width="2.5"/><rect x="146" y="140" width="24" height="5" fill="#E07A93"/></g>
         <g><rect x="430" y="132" width="24" height="34" rx="4" fill="#C8CDD3" stroke="#4A2E1C" stroke-width="2.5"/><rect x="430" y="140" width="24" height="5" fill="#F5BE4E"/></g>
-        <text x="300" y="240" text-anchor="middle" font-family="var(--round)" font-weight="700" font-size="13" fill="#A88468">— Germany ·········· 8,000 km of string ·········· China —</text>
+        <text x="300" y="240" text-anchor="middle" font-family="var(--round)" font-weight="700" font-size="13" fill="#A88468">Bearshree · Germany ······ 8,000 km of string ······ China · Bearthy</text>
       </svg>
     </div>
     <p class="call-note reveal">(dramatised reconstruction · based on true events)</p>
@@ -671,26 +694,26 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
   <div class="wrap center">
     <div class="eyebrow reveal">classified information</div>
     <h2 class="sec-title reveal">8 facts about Cathy</h2>
-    <p class="sec-sub reveal">Researched for a very long time by a Master's student. Peer-reviewed by one brown bear. Tap each card.</p>
+    <p class="sec-sub reveal">Researched for a very long time by a Master's student. Peer-reviewed by Bearshree. Tap each card.</p>
     <div class="cards" id="cards"></div>
   </div>
 </section>
 
-<!-- ============ NIGHT SKY ============ -->
+<!-- ============ LANTERNS ============ -->
 <section id="sky">
   <div class="wrap center">
-    <div class="eyebrow reveal">same moon, different sky</div>
-    <h2 class="sec-title reveal">Wish upon our stars</h2>
-    <p class="sec-sub reveal">When the moon sets in China, it’s rising over Germany. Same sky, same moon, two bears looking up. Tap the 8 bright stars — each one hides a promise.</p>
+    <div class="eyebrow reveal">same sky, different countries</div>
+    <h2 class="sec-title reveal">Lanterns for us</h2>
+    <p class="sec-sub reveal">In China you release sky lanterns. In India we light diyas. So the bears made something in between. Tap the lantern to send it up; each one carries a promise.</p>
     <div class="sky-card reveal" id="skyCard">
       <div class="moon"></div>
-      <svg class="constel" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g id="constel"></g></svg>
       <div class="shoot"></div><div class="shoot s2"></div>
       <div class="hill"></div>
       <span class="bear brown sit" data-bear="brown"></span>
       <span class="bear white sit shy" data-bear="white"></span>
     </div>
-    <div class="promise" id="promise" aria-live="polite">✦ tap a star ✦</div>
+    <div class="promise" id="promise" aria-live="polite">The first lantern is waiting.</div>
+    <button class="btn pink" id="releaseBtn">Release a lantern <span id="lanCount">1/8</span></button>
   </div>
 </section>
 
@@ -724,9 +747,9 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
   <div class="wrap center">
     <div class="eyebrow reveal">official birthday vouchers</div>
     <h2 class="sec-title reveal">Your bear coupons</h2>
-    <p class="sec-sub reveal">Tap “redeem”, screenshot it, and send it to your brown bear. He is legally (emotionally) required to honour it.</p>
+    <p class="sec-sub reveal">Tap “redeem”, screenshot it, and send it to Bearshree. He is legally (emotionally) required to honour it.</p>
     <div class="tickets" id="tickets"></div>
-    <p class="fine reveal">Terms &amp; conditions: valid forever, no expiry date, non-transferable (especially to other bears). Brown bear reserves no rights at all.</p>
+    <p class="fine reveal">Terms &amp; conditions: valid forever, no expiry date, non-transferable (especially to other bears). Bearshree reserves no rights at all.</p>
   </div>
 </section>
 
@@ -742,8 +765,8 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
       <div class="hug-heart" style="color:var(--pink-d);width:56px;height:56px"><svg viewBox="0 0 24 22" aria-hidden="true"><path d="M12 21s-8.5-5.3-10.6-10.2C-.2 6.9 2.3 2 6.6 2c2.4 0 4.2 1.3 5.4 3.2C13.2 3.3 15 2 17.4 2c4.3 0 6.8 4.9 5.2 8.8C20.5 15.7 12 21 12 21z" fill="currentColor"/></svg></div>
       <span class="bear brown b" id="hugBrown" data-bear="brown"></span>
       <span class="bear white w" id="hugWhite" data-bear="white"></span>
-      <span class="tag b">him · Germany</span>
-      <span class="tag w">you · China</span>
+      <span class="tag b">Bearshree · Germany</span>
+      <span class="tag w">Bearthy · China</span>
     </div>
     <div class="hug-msg" id="hugMsg" aria-live="polite"></div>
     <button class="btn pink" id="hugBtn">Send a hug</button>
@@ -754,7 +777,7 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
 <section id="letter">
   <div class="wrap center">
     <div class="eyebrow reveal">one last thing</div>
-    <h2 class="sec-title reveal">A letter from your brown bear</h2>
+    <h2 class="sec-title reveal">A letter from Bearshree</h2>
     <button class="envelope reveal" id="envelope" aria-label="Open the letter">
       <span class="env-back"></span>
       <span class="env-peek"></span>
@@ -776,8 +799,8 @@ body.first #nav{opacity:0;pointer-events:none;transform:translate(-50%,30px)}
   </div>
   <div class="chase-cap">(him, chasing you across the world, as usual)</div>
   
-  made with love (and far too much coffee) by your brown bear in Germany<br>
-  for the white bear in China · 生日快乐, Cathy
+  made with love (and far too much coffee) by Bearshree in Germany<br>
+  for Bearthy in China · 生日快乐, Cathy
 </footer>
 </section>
 </main>
@@ -1212,7 +1235,7 @@ candles.forEach(c=>c.addEventListener('click',()=>{
   c.classList.add('out'); pop();
   const left = candles.filter(x=>!x.classList.contains('out')).length;
   if(left){wish.textContent = left===2 ? "2 candles left. Big breath, birthday girl…" : "1 left! Don't stop now 🌬️"; return}
-  wish.innerHTML='<span class="big">Wish made! 🎉</span>Brown bear hopes it was about him. (It was, right?)';
+  wish.innerHTML='<span class="big">Wish made! 🎉</span>Bearshree hopes it was about him. (It was, right?)';
   ['cakeBrown','cakeWhite'].forEach(id=>document.getElementById(id).classList.add('dance'));
   const r=document.querySelector('.cake').getBoundingClientRect();
   burst(r.left+r.width/2, r.top, 180, 1.1);
@@ -1266,7 +1289,7 @@ hugBtn.addEventListener('click',()=>{
    ============================================================= */
 const LETTER = `Dear Cathy,
 
-Happy 19th birthday, my little white bear. 🤍
+Happy 19th birthday, my Bearthy. 🤍
 
 I'm writing this from Germany, somewhere between a deadline and a very strong coffee, and the truth is the same as every other day: my favourite part of it is you.
 
@@ -1280,7 +1303,7 @@ One day very soon there won't be a screen between us. Until then, every hug on t
 
 Happy birthday. 生日快乐. I love you.
 
-— your brown bear`;
+— your Bearshree`;
 const env=document.getElementById('envelope'), card=document.getElementById('letterCard'), txt=document.getElementById('letterText'), sig=document.getElementById('sig');
 let typing=null;
 function finishLetter(){clearTimeout(typing);typing=null;txt.textContent=LETTER;sig.classList.add('show');document.getElementById('skip').hidden=true}
@@ -1354,7 +1377,7 @@ startHero = function(){
    Pages: one scene at a time, with animated switches
    ============================================================= */
 const scenes=[...document.querySelectorAll('main > section')];
-const NAMES={hero:'Hello',map:'Our map',call:'The phone call',reasons:'8 facts',sky:'Our stars',cake:'Your cake',coupons:'Coupons',hug:'Hug machine',letter:'A letter'};
+const NAMES={hero:'Hello',map:'Our map',call:'The phone call',reasons:'8 facts',sky:'Our lanterns',cake:'Your cake',coupons:'Coupons',hug:'Hug machine',letter:'A letter'};
 let cur=0, busy=false;
 const dotsEl=document.getElementById('dots'), prevBtn=document.getElementById('prevBtn'), nextBtn=document.getElementById('nextBtn');
 scenes.forEach((sc,i)=>{const d=document.createElement('button');d.setAttribute('aria-label','Go to '+NAMES[sc.id]);d.addEventListener('click',()=>go(i));dotsEl.appendChild(d)});
@@ -1414,12 +1437,12 @@ document.querySelector('main').addEventListener('touchend',e=>{const dx=e.change
 show(0);
 
 /* =============================================================
-   Night sky: tap stars → promises + a constellation
+   Lanterns: each one floats up carrying a promise
    ============================================================= */
 const sky=document.getElementById('skyCard');
 for(let i=0;i<70;i++){const t=document.createElement('span');t.className='tw';t.style.left=Math.random()*100+'%';t.style.top=Math.random()*72+'%';t.style.animationDelay=(-Math.random()*3)+'s';if(Math.random()<.2){t.style.width=t.style.height='3px'}sky.appendChild(t)}
 const PROMISES=[
-  "I promise to always say good night — even when it’s my morning.",
+  "I promise to always say good night, even when it’s my morning.",
   "I promise to learn one real Chinese dish for you (and not set the kitchen on fire).",
   "I promise to take you to India and let my family overfeed you.",
   "I promise to show you a German Christmas market. Hot chocolate on me.",
@@ -1428,22 +1451,39 @@ const PROMISES=[
   "I promise to be your biggest fan, your safe place and your worst singer.",
   "I promise to love you on every birthday. Starting with this one."
 ];
-const SPOTS=[[10,22],[24,42],[33,15],[47,33],[60,13],[70,42],[86,58],[14,60]];
-const constel=document.getElementById('constel'), promiseEl=document.getElementById('promise');
-let lastStar=null, starsDone=0;
-SPOTS.forEach(([x,y],i)=>{
-  const b=document.createElement('button'); b.className='wstar'; b.textContent='✦'; b.style.left=x+'%'; b.style.top=y+'%'; b.style.animationDelay=(-i*.3)+'s';
-  b.setAttribute('aria-label','Star '+(i+1));
-  b.addEventListener('click',()=>{
-    promiseEl.textContent=PROMISES[i]; pop();
-    if(b.classList.contains('done')) return;
-    b.classList.add('done'); b.textContent='♥'; starsDone++;
-    if(lastStar){const l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',lastStar[0]);l.setAttribute('y1',lastStar[1]);l.setAttribute('x2',x);l.setAttribute('y2',y);l.setAttribute('pathLength','1');constel.appendChild(l)}
-    lastStar=[x,y];
-    if(starsDone===SPOTS.length){setTimeout(()=>{promiseEl.textContent='You made a constellation. I’m officially naming it “Cathy”. ✦';chime();const r=sky.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/3,120)},1200)}
-  });
-  sky.appendChild(b);
-});
+const SPOTS=[[14,20],[30,36],[40,13],[54,30],[64,12],[24,56],[80,50],[90,26]];
+const promiseEl=document.getElementById('promise'), relBtn=document.getElementById('releaseBtn'), lanCount=document.getElementById('lanCount');
+let released=0, readyLan=null, flying=false;
+function makeLantern(i){
+  const b=document.createElement('button'); b.className='lan ready'+(i%3===1?' pink':''); b.setAttribute('aria-label','Lantern '+(i+1));
+  b.innerHTML='<span class="lan-in"><i></i><i></i></span>';
+  b.addEventListener('click',e=>{e.stopPropagation(); if(b.classList.contains('ready')) release(); else {promiseEl.textContent=PROMISES[i]; sky.querySelectorAll('.lan').forEach(x=>x.classList.remove('read')); b.classList.add('read'); pop()}});
+  sky.appendChild(b); readyLan=b;
+  b.animate([{opacity:0,transform:'translate(-50%,-30%) scale(.6)'},{opacity:1,transform:'translate(-50%,-50%) scale(1)'}],{duration:600,easing:'cubic-bezier(.3,1.5,.5,1)'});
+}
+function release(){
+  if(flying||released>=PROMISES.length||!readyLan) return; flying=true;
+  const i=released, b=readyLan, [x,y]=SPOTS[i], sway=(i%2?1:-1)*(30+Math.random()*30);
+  b.classList.remove('ready'); readyLan=null; chime();
+  promiseEl.textContent=PROMISES[i];
+  b.animate([
+    {left:'50%',top:'70%',transform:'translate(-50%,-50%) scale(1)'},
+    {left:`calc(50% + ${sway}px)`,top:'52%',transform:'translate(-50%,-50%) scale(.92) rotate(4deg)',offset:.35},
+    {left:`calc(${(50+x)/2}% - ${sway/2}px)`,top:`${(52+y)/2}%`,transform:'translate(-50%,-50%) scale(.8) rotate(-3deg)',offset:.7},
+    {left:x+'%',top:y+'%',transform:'translate(-50%,-50%) scale(.7)'}
+  ],{duration:4200,easing:'cubic-bezier(.35,.1,.3,1)',fill:'forwards'}).finished.then(()=>b.classList.add('aloft'));
+  released++;
+  setTimeout(()=>{flying=false;
+    if(released<PROMISES.length){makeLantern(released);lanCount.textContent=`${released+1}/${PROMISES.length}`}
+    else finale();
+  },1400);
+}
+function finale(){
+  relBtn.hidden=true;
+  setTimeout(()=>{sky.classList.add('finale');promiseEl.textContent='Eight lanterns, eight promises. Every single one is for you. ✦';chime();const r=sky.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/3,120)},3000);
+}
+relBtn.addEventListener('click',release);
+makeLantern(0);
 
 /* =============================================================
    Little hearts follow her finger / cursor
